@@ -1,0 +1,32 @@
+<section>
+  <div class="card-panel purple">
+    ALL MEMBERS
+  </div>
+</section>
+<div class="row" style="margin:auto">
+    <div class="col s12 m5">
+      <div class="card-panel teal">
+        <span class="white-text">
+            <table>
+                <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Salary</th>
+                  </tr>
+                </thead>
+            
+                <tbody>
+                  <tr  *ngFor="let emp of employeeService.employees">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.position}}</td>
+                    <td>{{emp.office}}</td>
+                    <td>{{emp.salary}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </span>
+      </div>
+    </div>
+  </div>

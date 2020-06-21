@@ -54,21 +54,14 @@ Employee.find((err,docs)=>{
 });
 });
 router.post('/',(req,res,)=>{
-    console.log('Request body output '
-     + JSON.stringify(req.body));
+    console.log('Request body output '+ JSON.stringify(req.body));
     var emp=new Employee({
         name :req.body.name,
         position:req.body.position,
         office:req.body.office,
         salary:req.body.salary
     });
-    emp.save(function(err, doc){
-        if(err){
-            console.log(err)
-            return ;                
-        }
-        res.send(doc);
-    });
+
   
     emp.save( (err,doc)=>{
         if(!err){ res.send(doc);}
