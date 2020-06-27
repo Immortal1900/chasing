@@ -1,0 +1,78 @@
+<!--Form with header-->
+<div class="card addpr">
+    <div class="card-block">
+
+        <!--Header-->
+        <div class="form-header  purple darken-1">
+            <span style="text-align: center;">
+                <h1> ADD PRODUCTS </h1>
+            </span>
+        </div>
+
+        <!--Body-->
+     <form #addproductform="ngForm" (ngSubmit)="onSubmit(addproductform)">
+     <div class="md-form">
+        <input type="text" id="form1" class="form-control" name="pname"  [(ngModel)]="productservice.selectedproduct.pname"  required>
+        <label for="form2">PRODUCT name</label>
+    </div>
+    <h2>CHOOSE CATEGORY</h2>
+    <div class="row">
+        <div class="col-sm">
+            <fieldset class="form-group">
+                <input name="group1" type="radio"  name="category"  [(ngModel)]="productservice.selectedproduct.category" value="snack" >
+                <label for="radio1">SNACK</label>
+            </fieldset>
+            
+            <fieldset class="form-group">
+                <input name="group1" type="radio"  name="category"  [(ngModel)]="productservice.selectedproduct.category" value="maincourse">
+                <label for="radio2">MAIN COURSE</label>
+            </fieldset>
+            <fieldset class="form-group">
+                <input name="group1" type="radio"  name="category"  [(ngModel)]="productservice.selectedproduct.category" value="drinks">
+                <label for="radio2">DRINKS</label>
+            </fieldset>
+            
+         
+        </div>
+        <div class="col-sm md-form">
+            <input type="text" id="form3" class="form-control" name="subcategory"  [(ngModel)]="productservice.selectedproduct.subcategory" required>
+            <label style="padding-left: 10%" for="form4">SUB-CATEGORY</label>
+        </div>
+        
+    
+    </div>
+    
+    
+
+    <div class="row">
+        <h2 style="padding-left: 10%;">Price</h2>
+        <div class="col-6">
+            <input type="number" id="form4" class="form-control"  name="price"  [(ngModel)]="productservice.selectedproduct.price" required>
+      
+            
+        </div>
+        <div class="col-sm">
+            <h1>
+                Rs {{productservice.selectedproduct.price}}
+                /-
+            </h1>
+        </div>
+    </div>
+
+    <div class="md-form">
+        <input type="text" id="form4" class="form-control" name="serialtag"  [(ngModel)]="productservice.selectedproduct.serialtag" required>
+        <label for="form4">SERIAL TAG/</label>
+    </div>
+
+ <div class="md-form">
+    <textarea id="textarea1" maxlength="100" class="md-textarea" length="100"  rows="4" cols="100" name="category"  [(ngModel)]="productservice.selectedproduct.description" required></textarea>
+    <label for="textarea1">DECSRIPTION</label>
+
+ </div>
+    <div class="text-center">
+        <button class="btn btn-default" (click)="mm()" type=submit [disabled]="!addproductform.valid">ADD</button>
+    </div>
+    </form>
+
+    </div>
+</div>

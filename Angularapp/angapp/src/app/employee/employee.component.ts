@@ -1,6 +1,7 @@
 import { EmployeeService } from './../shared/employee.service';
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+
 declare var M:any;
 @Component({
   selector: 'app-employee',
@@ -37,7 +38,7 @@ export class EmployeeComponent implements OnInit {
     console.log('Submit called');
     this.employeeService.postEmployee(form.value).subscribe((res)=>{
       this.resetForm(form);
-      M.toast({html: 'Saved Succesfully',classes: 'rounded'});
+      console.log("SUCCESs");
     });
   }
 

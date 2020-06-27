@@ -1,59 +1,69 @@
-<div class="row">
-    <div class="col s12">
-        <div class="card">
-            <div class="card-content white-text">
-                <div class="row">
-                    <div class="col s5">
-                        <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
-
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="ENTER FULL NAME" required>
-                                    <label>Name: </label><label class="red-text">*</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input type="text" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="OFFICE" required>
-                                    <label>Office: </label><label class="red-text">*</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input type="text" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="ENTER POSITION" required>
-                                    <label>Position: </label><label class="red-text">*</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input type="text" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="ENTER Salary">
-                                    <label>Salary: </label><label class="red-text">*</label>
-                                </div>
-                            </div>
-                            <div class="input-field col s12">
-                                <button class="btn btn-custom right" type=button (click)="resetForm(employeeForm)">
-                                    RESET
-                                </button>
-                            </div>
-                            <div class="input-field col s12">
-                                <button class="btn btn-custom right" type=submit [disabled]="!employeeForm.valid">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card">
+    
+                <!-- Card body -->
+                <div class="card-body">
+              
+                  <!-- Material form register -->
+                
+                    <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+                    <p class="h4 text-center py-4">Sign up</p>
+              
+                    <!-- Material input text -->
+                    <div class="md-form">
+                      <i class="fa fa-user prefix grey-text"></i>
+                      <input class="form-control" type="text" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name"  required>
+                                
+                      <label for="materialFormCardNameEx" class="font-weight-light">Your name</label>
                     </div>
-                    <div class="col s1">
-                       
-                           
-                              
-                              
-                                    <a class="waves-effect waves-light btn-small" routerLink="/showall">SHOW ALL Registered</a>
-                              
-                            
-                       
-                    </div>          
+              
+                    <!-- Material input email -->
+                    <div class="md-form">
+                      <i class="fa fa-envelope prefix grey-text"></i>
+                      <input type="text" name="position" class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position"  required>
+                                
+                      <label for="materialFormCardEmailEx" class="font-weight-light">Position</label>
+                    </div>
+              
+                    <!-- Material input email -->
+                    <div class="md-form">
+                      <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+                      <input type="text" class="form-control" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office"  required>
+                                
+                      <label for="materialFormCardConfirmEx" class="font-weight-light">Office</label>
+                    </div>
+              
+                    <!-- Material input password -->
+                    <div class="md-form">
+                      <i class="fa fa-lock prefix grey-text"></i>
+                      <input type="text" name="salary" class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" >
+                               
+                      <label for="materialFormCardPasswordEx" class="font-weight-light">Salary</label>
+                    </div>
+              
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm">
+                            <button class="btn btn-default" type=submit [disabled]="!employeeForm.valid">Submit</button>
+                          </div>
+                        <div class="col-sm">
+                            <button class="btn btn-default" type=button (click)="resetForm(employeeForm)">RESET</button>
+                        </div>
+                     </div>
                 </div>
-            </div>
+                  </form>
+                  <!-- Material form register -->
+              
+                </div>
+                <!-- Card body -->
+              
+              </div>
         </div>
     </div>
 </div>
+
+
+
