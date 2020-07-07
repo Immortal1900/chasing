@@ -19,13 +19,16 @@ import { MatListModule } from '@angular/material/list'; // CLI imports router
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductsComponent } from './products/products.component';
 import { AddproductsComponent } from './addproducts/addproducts.component';
+import { ShowproductsComponent } from './showproducts/showproducts.component';
+import { EditproductComponent } from './editproduct/editproduct.component';
 const routes:Routes=[
   {path: '', component:HomeComponent}
   ,{path: 'showall',component: ShowallComponent},
   {path: '',component : EmployeeComponent},
   {path: 'products',component : ProductsComponent},
   {path: 'products/addproducts',component : AddproductsComponent}
-
+,
+{path: 'products/showproducts',component : ShowproductsComponent}
 ];
 
 @NgModule({
@@ -37,6 +40,8 @@ const routes:Routes=[
     NavBarComponent,
     ProductsComponent,
     AddproductsComponent,
+    ShowproductsComponent,
+    EditproductComponent,
 
   
   ],

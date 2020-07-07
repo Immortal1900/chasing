@@ -3,6 +3,7 @@ const { Products } = require('../Models/product');
 var router=express.Router();
 
 router.put('/:id',(req,res)=>{
+    console.log("REQUESTED UPDATE ID"+req.params.id);
     var product={
         pname: req.body.pname,
         category:req.body.category,
@@ -21,6 +22,7 @@ router.put('/:id',(req,res)=>{
     });
 });
 router.delete('/:id',(req,res)=>{
+    
     Products.findByIdAndRemove(req.params.id,(err,doc)=>{
         if(!err){
             res.send(doc);
@@ -30,6 +32,20 @@ router.delete('/:id',(req,res)=>{
             console.log('Error in Employee UPDATE:'+ JSON.stringify(err,undefined,2));
         }
     });
+});
+router.get('/search/:name',function(req,res){
+    console.log("REQUESTED search query"+req.query.name);
+
+    var q=new RegExp(req.params.name,'i');
+   Products.find({pname:q},(err,doc)=>{
+       
+          if(!err){
+            res.send(doc);
+        }
+        else{
+            console.log("ERR in searching"+ JSON.stringify(err,undefined,2));
+        }
+    })
 });
 router.post('/',(req,res)=>{
     console.log("Requeted body output"+ JSON.stringify(req.body));
@@ -54,4 +70,13 @@ router.post('/',(req,res)=>{
     });
 
 });
+router.get('/',(req,res)=>{
+    Products.find((err,docs)=>{
+        if(!err){
+            res.send(docs);
+        }    else{
+            console.log('Error in Retriving Employee :'+ JSON.stringify(err, undefined,2));
+        }
+    });
+    });
 module.exports=router;
